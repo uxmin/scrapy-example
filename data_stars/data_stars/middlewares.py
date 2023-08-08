@@ -4,8 +4,7 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from data_stars.utils.os import get_path
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter, is_item
+from data_stars.utils.time import get_current_time_string
 from scrapy import signals
 
 
@@ -110,7 +109,7 @@ class SaveHtmlMiddleware:
     def process_response(self, request, response, spider):
         if response.status == 200:
             request_url: str = request.url.split('/')[-1]
-            filename = f'{spider.name}_{request_url}.html'
-            with open(f'{self.html_file_path}/html/{filename}', 'w', encoding='utf-8') as f:
+            filename = f'{request_url}_{get_current_time_string()}.html'
+            with open(f'{self.html_file_path}/html/{spider.name}/{filename}', 'w', encoding='utf-8') as f:
                 f.write(response.text)
             return response
