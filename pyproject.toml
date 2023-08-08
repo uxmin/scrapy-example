@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "markcloud-data-stars"
+version = "0.1.0"
+description = "Markcloud's Data Collector"
+authors = ["uxmin <codename.ym@gmail.com>"]
+readme = "README.md"
+packages = [{include = "data_stars"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+scrapy = "^2.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
