@@ -1,5 +1,5 @@
-# MarkCloud Data Stars
-마크클라우드의 데이터 수집기입니다.<br/>
+# Scrapy Example
+Scrapy Framework 이해를 돕고자 작성한 예시 코드입니다.<br/>
 쿠팡, 네이버쇼핑 등 각 쇼핑몰은 하나의 스파이더로 실행됩니다.
 <br/><br/>
 
